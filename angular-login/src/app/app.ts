@@ -15,16 +15,12 @@ export class App {
   isLoggedIn: boolean = false;
 
   onSubmit(): void {
-    if (this.userId && this.password) {
-      // Simple validation - in a real app, this would authenticate against a backend
-      if (this.userId.trim() !== '' && this.password.trim() !== '') {
-        this.isLoggedIn = true;
-        this.loginMessage = `Welcome, ${this.userId}!`;
-      } else {
-        this.loginMessage = 'Please enter valid credentials.';
-      }
+    // Simple validation - in a real app, this would authenticate against a backend
+    if (this.userId.trim() && this.password.trim()) {
+      this.isLoggedIn = true;
+      this.loginMessage = `Welcome, ${this.userId}!`;
     } else {
-      this.loginMessage = 'Please fill in all fields.';
+      this.loginMessage = 'Please enter valid credentials.';
     }
   }
 
